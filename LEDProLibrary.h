@@ -5,15 +5,15 @@
 LEDProLibrary v 0.0.2a
 */
 
-#ifndef LEDProLibrary_h
-#define	LEDProLibrary_h
+#ifndef ledprolibrary_h
+#define	ledprolibrary_h
 
 #include "Arduino.h"
 
-void blink(int port,int onTime, int offTime); 											//Моргание светодиодом
-void line(int startLED, int numberLED, int onTime, int offTime, bool mode);				//Бегущий огонек
-void impulse(int port,int startLight,int step, int stepTime, int multiImp, bool mode);	//Импульсные световзрывы
-void progress(int startLED, int endLED, int onTime);												//Шкала из светодиодов
+void blink(int, int, int); 			//Моргание светодиодом
+void line(int, int, int, int, bool);		//Бегущий огонек
+void impulse(int,int,int, int, int, bool);	//Импульсные световзрывы
+void progress(int, int, int);			//Шкала из светодиодов
 
 	
 #endif
