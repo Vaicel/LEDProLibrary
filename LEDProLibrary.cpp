@@ -14,7 +14,7 @@ void blink(int port,int onTime, int offTime){
   delay(offTime);
 }
 void line(int startLED, int numberLED, int onTime, int offTime, bool mode){
-	if(mode = true){
+	if(mode == true){
 		for(int sLED = startLED; sLED < numberLED+startLED; sLED++){
 			blink(sLED,onTime,offTime);
 		}
@@ -26,13 +26,14 @@ void line(int startLED, int numberLED, int onTime, int offTime, bool mode){
 	}
 }
 void impulse(int port,int startLight,int step, int stepTime, int multiImp, bool mode){
-	if(mode = true)	{	
-		for(int i = 0; i<= multiImp; i++){
+	if(mode == true)	{	
+		for(int i = 1; i<= multiImp; i++){
 			for(int st = startLight; st <= 255; st += step){
 				analogWrite(port, st);
 				delay(stepTime);
 			}
-		}	
+		}
+		digitalWrite(port,LOW);
 	}
 	else{
 		for(int i = 0; i<= multiImp; i++){
@@ -41,17 +42,15 @@ void impulse(int port,int startLight,int step, int stepTime, int multiImp, bool 
 				delay(stepTime);
 			}
 		}
+		digitalWrite(port,LOW);
 	}
 }
-void progress(int startLED, int endLED,bool mode){
-	if(mode = true){	
-		for(int sLED = startLED; sLED<=endLED;  sLED++){
+void progress(int startLED, int endLED, int onTime){
+	for(int sLED = startLED; sLED<=endLED;  sLED++){
 			digitalWrite(sLED, HIGH);
-		}
 	}
-	else{
-		for(int sLED = endLED; sLED>=startLED;  sLED--){
-			digitalWrite(sLED, HIGH);
-		}
-		
+	delay(onTime);
+	for(int sLED = startLED; sLED<=endLED;  sLED++){
+			digitalWrite(sLED, LOW);
 	}
+}
