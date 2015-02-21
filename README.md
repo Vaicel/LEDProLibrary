@@ -10,6 +10,9 @@ LEDProLibrary
 Описание API
 -----
 
+###Blink
+
+
 ***Функция:***
 
 `void blink(int pin, int onTime, int offTime)`
@@ -27,6 +30,8 @@ LEDProLibrary
     void loop(){
       blink(13, 500, 500);
     }
+
+###Line
 
 ***Функция:***
 
@@ -46,6 +51,8 @@ LEDProLibrary
     void loop() {
       line(2,6,500,500,UP);
     }
+
+###Impulse
 
 ***Функция:***
 
@@ -68,6 +75,8 @@ LEDProLibrary
       impulse(4, 0, 5, 100, 1, DOWN);
     }
 
+###Progress
+
 ***Функция:***
 
 `void progress(int startLED, int endLED, int onTime)`
@@ -87,8 +96,7 @@ LEDProLibrary
     }
 
 
-
-
+###Режимы функций
 
 
 [^1]: Режимы
